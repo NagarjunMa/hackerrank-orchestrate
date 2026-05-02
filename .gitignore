@@ -31,3 +31,6 @@ data/index/
 data/embeddings/
 *.sqlite
 *.db
+
+# agent-generated cache (FAISS index binary + metadata)
+code/.cache/

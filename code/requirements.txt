@@ -1,0 +1,10 @@
+# Pinned exact versions for reproducibility
+# Regenerate with: pip freeze > requirements_lock.txt
+
+anthropic==0.97.0
+sentence-transformers==5.4.1
+faiss-cpu==1.13.2
+python-dotenv==1.2.2
+numpy==2.4.4
+PyYAML==6.0.3
+pytest==9.0.3

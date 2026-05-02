@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p ~/hackerrank_orchestrate)",
+      "Bash(python3 -c \"import sys; sys.path.insert\\(0, 'code'\\); from agent import Agent; from retriever import Retriever; from classifier import check_escalation; from indexer import build_index; from prompts import SYSTEM_PROMPT; print\\('All imports OK'\\)\")",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
