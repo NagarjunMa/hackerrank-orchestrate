@@ -86,20 +86,26 @@ python code/main.py \
 
 ## Evaluate (before final run)
 
-Run against `sample_support_tickets.csv` which has ground truth:
+Run against `sample_support_tickets.csv` (108 rows with gold labels):
 
 ```bash
+# Fast eval — no API call, embedding cosine similarity vs gold, spot-check 10 justifications
+python code/eval.py --no-llm-judge --semantic-sim --spot-check 10
+
 # Full eval with LLM judge (scores hallucination + completeness)
 python code/eval.py --verbose
 
-# Fast eval — no API call for response scoring
-python code/eval.py --no-llm-judge
+# Classify failure types and write analysis_report.txt
+python code/eval.py --no-llm-judge --analyze
 
-# Evaluate only first N tickets
+# Validate output.csv integrity (56 rows, 5 cols, no empty replied)
+python code/eval.py --validate-output
+
+# Evaluate only first N tickets (dev/debug)
 python code/eval.py --limit 5
 ```
 
-Reports per-field accuracy (status, request_type, product_area, response quality) and writes `support_tickets/eval_output.csv`.
+Reports: per-field accuracy (status, request_type, product_area), per-domain breakdown (HackerRank/Claude/Visa), escalation miss alarm, optional semantic similarity and LLM judge scores. Writes `support_tickets/eval_output.csv`.
 
 ---
 

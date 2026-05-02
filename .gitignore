@@ -34,3 +34,7 @@ data/embeddings/
 
 # agent-generated cache (FAISS index binary + metadata)
 code/.cache/
+
+# claude code local
+.claude/settings.local.json
+.claude/worktrees/
